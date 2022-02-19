@@ -1,0 +1,19 @@
+.counter {
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+button {
+  float: left;
+  padding: 10px;
+  margin: 30px 3px 0 3px;
+  font-weight: bold;
+  border: solid 1px #000;
+  border-radius: 5px;
+  background-color: #DDD;
+  cursor: default;
+}
+
+button:hover {
+  opacity: 0.8;
+}
