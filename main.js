@@ -11,13 +11,13 @@ function timer() {
     const noms = progress / 1000;
     const millisecond = progress ? (String(noms).split(".")[1]).slice(-1) : "0";
     const nos = Math.trunc(noms);
-    const second = millisecond ? ("0" + (nos % 3600 % 60)).slice(-2) : "0";
-    const minute = second ? ("0" + Math.trunc(nos % 3600 / 60)).slice(-2) : "0";
-    const hour = minute ? ("0" + Math.trunc(nos / 3600 % 60)).slice(-2) : "0";
+    const second = millisecond ? ("0" + (nos % 3600 % 60)).slice(-2) : "00";
+    const minute = second ? ("0" + Math.trunc(nos % 3600 / 60)).slice(-2) : "00";
+    const hour = minute ? ("0" + Math.trunc(nos / 3600 % 60)).slice(-2) : "00";
       if (progress) {
       record.textContent = hour + ":" + minute + ":" + second + ":" + millisecond;
     } else {
-      record.textContent = "0:0:0:0";
+      record.textContent = "00:00:00:0";
       clearInterval(stop);
     }
   });
@@ -48,7 +48,7 @@ stopButton.addEventListener("click", function() {
 resetButton.addEventListener("click", function() {
   clearInterval(stop);
   progress = 0;
-  record.textContent = "0:0:0:0";
+  record.textContent = "00:00:00:0";
   addition = 0;
   startButton.disabled = false;
   stopButton.disabled = true;
